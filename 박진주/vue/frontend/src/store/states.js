@@ -10,4 +10,6 @@ export default {
     characterStatus: {},
     monsterStatus: [],
 
+    boards: [],
+    board: {}
 }

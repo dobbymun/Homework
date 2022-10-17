@@ -9,6 +9,7 @@ import {
     REQUEST_EQUIP_ITEM,
     REQUEST_CHARACTER_STATUS_FROM_SPRING,
     REQUEST_MONSTER_STATUS_FROM_SPRING,
+    REQUEST_BOARD_LIST_FROM_SPRING, REQUEST_BOARD_FROM_SPRING,
 } from './mutation-types'            //mutation-types 파일에서 가져오는 const 상수
 
 export default {
@@ -46,5 +47,12 @@ export default {
         state.monsterStatus = passingData
     },
 
+
+    [REQUEST_BOARD_LIST_FROM_SPRING] (state, passingData) {
+        state.boards = passingData
+    },
+    [REQUEST_BOARD_FROM_SPRING] (state, passingData) {
+        state.board = passingData
+    },
 
 }

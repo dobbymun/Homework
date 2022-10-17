@@ -9,6 +9,11 @@ import VueToSpringView from "@/views/axiosTest/VueToSpringView";
 import RpgGameView from "@/views/rpg/RpgGameView";
 import TestButtonView from "@/views/khtest/TestButtonView";
 import DataSendTestView from "@/views/basics/DataSendTestView";
+import JpaBoardListView from "@/views/boards/JpaBoardListView";
+import JpaBoardRegisterView from "@/views/boards/JpaBoardRegisterView";
+import JpaBoardReadView from "@/views/boards/JpaBoardReadView";
+import JpaBoardModifyView from "@/views/boards/JpaBoardModifyView";
+
 
 Vue.use(VueRouter)
 
@@ -59,6 +64,39 @@ const routes = [
     name: 'DataSendTestView',
     component: DataSendTestView
   },
+
+    //에러노트 - 클릭했을때 페이지에 아무것도 안뜨면 index 경로 추가 안했는 지 체크
+  {
+    path: '/board-list',
+    name: 'JpaBoardListView',
+    component: JpaBoardListView
+  },
+  {
+    path: '/board-register',
+    name: 'JpaBoardRegisterView',
+    component: JpaBoardRegisterView
+  },
+  {
+    path: '/board-read/:boardNo',
+    name: 'JpaBoardReadView',
+    components: {
+      default: JpaBoardReadView
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/board-modify/:boardNo',
+    name: 'JpaBoardModifyView',
+    components: {
+      default: JpaBoardModifyView
+    },
+    props: {
+      default: true
+    }
+  },
+
 ]
 
 const router = new VueRouter({
