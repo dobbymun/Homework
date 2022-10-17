@@ -1,6 +1,7 @@
 <template>
   <div>
     <h3>상점 (Local Component)</h3>
+
     <label>
       <input type="checkbox" v-model="shopView" v-on:click="shuffleShopList()">
       판매 목록

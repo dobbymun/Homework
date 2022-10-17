@@ -12,7 +12,6 @@ public class Character {
 
     public static List<Character> madeCharacterList = new ArrayList<>();
 
-
     private int level;
     private int hp;
     private int mp;

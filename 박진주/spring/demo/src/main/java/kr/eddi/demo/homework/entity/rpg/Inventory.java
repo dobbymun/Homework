@@ -1,7 +1,6 @@
 package kr.eddi.demo.homework.entity.rpg;
 
 public class Inventory {
-
     private String itemName;
     private Integer price;
     private String description;

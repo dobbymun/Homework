@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static kr.eddi.demo.controller.vue.homework.rpg.RpgCharacterController.characterStatus;
+
 @Slf4j
 @RestController
 @RequestMapping("/31th/rpg-game")
@@ -75,15 +77,15 @@ class RpgItemController {
             log.info(" 아이템 토탈가격: "+ tempBuyTotalPrice);
         }
 
-        if (Character.madeCharacterList.get(0).getMoney() - tempBuyTotalPrice >= 0) {                                        // 구매리스트 가격보다 소지금이 크면
-            Character.madeCharacterList.get(0).setMoney(Character.madeCharacterList.get(0).getMoney() - tempBuyTotalPrice);    // 소지금 setter 로 변경
+        if (characterStatus.getMoney() - tempBuyTotalPrice >= 0) {                                        // 구매리스트 가격보다 소지금이 크면
+            characterStatus.setMoney(characterStatus.getMoney() - tempBuyTotalPrice);    // 소지금 setter 로 변경
             for (int i = 0; i < requestBuyItem.getItemLists().size(); i++) {
                 ShopItems tmpItem = new ShopItems(tmp.get(i).getName(), tmp.get(i).getPrice(),
                         tmp.get(i).getDescription(), tmp.get(i).getAtk());
                 userInventoryList.add(tmpItem);
             }
             buyMsg = "아이템 구매를 완료했습니다";
-            log.info("구매 후 잔고: "+Character.madeCharacterList.get(0).getMoney() );
+            log.info("구매 후 잔고: "+characterStatus.getMoney() );
         } else {
             buyMsg = "돈이 부족하여 아이템 구매를 할 수 없습니다";
         }
