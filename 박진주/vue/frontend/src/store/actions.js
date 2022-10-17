@@ -91,6 +91,19 @@ export default {
             })
     },
 
+    //경험치 교환 추가 부분 ->  dispatch를 이용하면 actions 내부 메소드 가져다가 재호출 가능 -> 원래는 아래 주석코드와 같은 내용
+    requestExperienceExchangeFromSpring ({ dispatch }, payload) {
+        console.log("requestExperienceExchangeFromSpring()")
+
+        return axios.post('http://localhost:7777/37th/rpg-game/experience/exchange', payload)
+            .then((res) => {
+                if (res.data === true) {
+
+                    dispatch('requestCharacterStatusFromSpring')
+                    alert("경험치 교환에 성공했습니다")
+                }
+            })
+    },
 
     requestMonsterStatusFromSpring ({ commit }) {
         console.log("몬스터 정보 출력 from 스프링()")
@@ -109,6 +122,25 @@ export default {
                 commit(REQUEST_MONSTER_FROM_SPRING, res.data)
             })
     },
+
+   
+
+
+    // requestExperienceExchangeFromSpring ({ commit }, payload) {
+    //     console.log("requestExperienceExchangeFromSpring()")
+    //
+    //     return axios.post('http://localhost:7777/37th/rpg-game/experience/exchange', payload)
+    //         .then((res) => {
+    //             if (res.data == true) {
+    //                 axios.post('http://localhost:7777/37th/rpg-game/get-character-status')
+    //                     .then((res) => {
+    //                         commit(REQUEST_CHARACTER_STATUS_FROM_SPRING, res.data)
+    //                     })
+    //             }
+    //         })
+    // },
+
+
 
     //axios는 Promise 기반의 자바스크립트 비동기 처리방식의 라이브러리. 그래서 get 메소드로 요청후 .then()으로 결과값을 받아서 처리를 하는 형식으로 구성
 //불러온 데이터는 .then()의 res에 담아서 처리하는 형식

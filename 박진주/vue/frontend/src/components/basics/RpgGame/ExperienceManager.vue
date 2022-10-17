@@ -32,22 +32,11 @@ export default {
   },
   methods: {
     ...mapActions([
-      'requestExchangeExp',
+      'requestExperienceExchangeFromSpring',
     ]),
     async doExpExchange () {
-      let selectedExchangeExpList = this.expExchangeList()
-      let payload = {selectedExchangeExpList}
-      await this.requestExchangeExp(payload)
-    },
-
-    expExchangeList() {
-      let tmpList = []
-      for (let i = 0; i < this.expExchangeLists.length; i++) {
-        tmpList.push(this.expExchangeLists[this.exchangeListValue[i]])
-      }
-      return tmpList
-    },
-
+      await this.requestExperienceExchangeFromSpring(this.exchangeListValue)
+    }
   }
 }
 </script>
