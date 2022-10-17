@@ -7,4 +7,6 @@ export default {
     manyRandomMonsterValue: [],
     myInventory: [],
     exchangeExp: [],
+    characterStatus: {},
+
 }

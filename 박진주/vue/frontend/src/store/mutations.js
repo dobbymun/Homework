@@ -2,16 +2,16 @@ import {
     REQUEST_DATA_FROM_SPRING,
     REQUEST_MONSTER_FROM_SPRING,
     REQUEST_RANDOM_SHOP_ITEM,
-    REQUEST_CHARACTER_FROM_SPRING,
     REQUEST_MANY_RANDOM_MONSTER,
     REQUEST_RANDOM_MONSTER,
     REQUEST_MY_INVENTORY,
     REQUEST_EQUIP_ITEM,
-    REQUEST_EXCHANGE_EXP
+    REQUEST_CHARACTER_STATUS_FROM_SPRING,
+
 } from './mutation-types'            //mutation-types 파일에서 가져오는 const 상수
 
 export default {
-    [REQUEST_DATA_FROM_SPRING] (state, passingData) {
+    [REQUEST_DATA_FROM_SPRING] (state, passingData) {      // SPRING_REQUEST 라고 명칭해주기, 어디서 요청오는건지 명시 필요(파이썬인지, 스프링인지 등등)
         state.springFromVueTestValue = passingData
     },
 
@@ -21,10 +21,6 @@ export default {
 
     [REQUEST_MONSTER_FROM_SPRING] (state, passingData) {
         state.monsterValue = passingData
-    },
-
-    [REQUEST_CHARACTER_FROM_SPRING] (state, passingData) {
-        state.characterValue = passingData
     },
 
     [REQUEST_RANDOM_MONSTER] (state, passingData) {
@@ -40,7 +36,8 @@ export default {
     [REQUEST_EQUIP_ITEM] (state, passingData) {
         state.myEquipItem = passingData
     },
-    [REQUEST_EXCHANGE_EXP] (state, passingData) {
-        state.exchangeExp = passingData
+
+    [REQUEST_CHARACTER_STATUS_FROM_SPRING] (state, passingData) {
+        state.characterStatus = passingData
     },
 }
