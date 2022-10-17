@@ -2,7 +2,6 @@ package kr.eddi.demo.controller.vue.homework.rpg;
 
 
 import kr.eddi.demo.controller.vue.homework.rpg.request.ExchangeExp;
-import kr.eddi.demo.controller.vue.homework.rpg.request.RequestEquipItem;
 import kr.eddi.demo.homework.entity.rpg.Character;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/homework")
 @CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
-public class ExperienceController {
+public class ExperienceController_before {
 
     private String expMsg = "";
 
