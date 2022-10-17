@@ -1,10 +1,12 @@
 import {                                 //상수일때 표기(스크리밍 스테이크 표기법 : 대문자_대문자_대문자)
     REQUEST_DATA_FROM_SPRING,
     REQUEST_MANY_RANDOM_MONSTER,
+    REQUEST_MONSTER_FROM_SPRING,
     REQUEST_RANDOM_MONSTER,
     REQUEST_RANDOM_SHOP_ITEM,
     REQUEST_MY_INVENTORY,
     REQUEST_CHARACTER_STATUS_FROM_SPRING,
+    REQUEST_MONSTER_STATUS_FROM_SPRING,
 } from './mutation-types'
 
 // npm install axios --save-dev
@@ -89,6 +91,24 @@ export default {
             })
     },
 
+
+    requestMonsterStatusFromSpring ({ commit }) {
+        console.log("몬스터 정보 출력 from 스프링()")
+
+        return axios.get('http://localhost:7777/homework/monster-status')
+            .then((res) => {
+                commit(REQUEST_MONSTER_STATUS_FROM_SPRING, res.data)
+            })
+    },
+
+    requestMonsterFromSpring({commit}) {
+        console.log("I'm from action - 기본몬스터추가스프링()")
+
+        return axios.get('http://localhost:7777/homework/monster-status')
+            .then((res) => {
+                commit(REQUEST_MONSTER_FROM_SPRING, res.data)
+            })
+    },
 
     //axios는 Promise 기반의 자바스크립트 비동기 처리방식의 라이브러리. 그래서 get 메소드로 요청후 .then()으로 결과값을 받아서 처리를 하는 형식으로 구성
 //불러온 데이터는 .then()의 res에 담아서 처리하는 형식

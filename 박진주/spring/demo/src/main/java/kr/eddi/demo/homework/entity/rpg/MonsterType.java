@@ -7,6 +7,6 @@ public enum MonsterType {
     멧돼지,
     스켈레톤,
     오크,
-    홉고블린;
+    죽음의군주;
 
 }

@@ -2,19 +2,25 @@ package kr.eddi.demo.homework.entity.rpg;
 
 
 import lombok.Getter;
+import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
+@Setter
 public class Monster {
 
-    private String id;
+    public static List<Monster> appearMonsterList= new ArrayList<>();
+
+    private Integer id;
     private String name;
     private Integer hp;
     private Integer exp;
     private Integer dropMoney;
 
-    private final int MONSTER_TYPE_NUM = 7;
-
     public Monster(Integer id, String name, Integer hp, Integer exp, Integer dropMoney){
+        this.id = id;
         this.name = name;
         this.hp = hp;
         this.exp = exp;

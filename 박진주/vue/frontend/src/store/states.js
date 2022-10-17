@@ -8,5 +8,6 @@ export default {
     myInventory: [],
     exchangeExp: [],
     characterStatus: {},
+    monsterStatus: [],
 
 }

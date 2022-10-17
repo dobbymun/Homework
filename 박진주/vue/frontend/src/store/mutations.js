@@ -2,12 +2,13 @@ import {
     REQUEST_DATA_FROM_SPRING,
     REQUEST_MONSTER_FROM_SPRING,
     REQUEST_RANDOM_SHOP_ITEM,
+    //  REQUEST_CHARACTER_FROM_SPRING,
     REQUEST_MANY_RANDOM_MONSTER,
     REQUEST_RANDOM_MONSTER,
     REQUEST_MY_INVENTORY,
     REQUEST_EQUIP_ITEM,
     REQUEST_CHARACTER_STATUS_FROM_SPRING,
-
+    REQUEST_MONSTER_STATUS_FROM_SPRING,
 } from './mutation-types'            //mutation-types 파일에서 가져오는 const 상수
 
 export default {
@@ -40,4 +41,10 @@ export default {
     [REQUEST_CHARACTER_STATUS_FROM_SPRING] (state, passingData) {
         state.characterStatus = passingData
     },
+
+    [ REQUEST_MONSTER_STATUS_FROM_SPRING] (state, passingData) {
+        state.monsterStatus = passingData
+    },
+
+
 }
