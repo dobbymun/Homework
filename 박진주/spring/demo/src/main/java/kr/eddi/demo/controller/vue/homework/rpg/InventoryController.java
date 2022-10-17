@@ -5,6 +5,8 @@ import kr.eddi.demo.homework.entity.rpg.Character;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+import static kr.eddi.demo.controller.vue.homework.rpg.RpgCharacterController.characterStatus;
+
 
 @Slf4j
 @RestController
@@ -29,7 +31,9 @@ public class InventoryController {
         for (int i = 0; i < requestEquipItem.getEquipitemLists().size(); i++) {
             tmpEffect += requestEquipItem.getEquipitemLists().get(i).getAtk();
         }
-        Character.madeCharacterList.get(0).setAtk(Character.madeCharacterList.get(0).getDefaultAtk() + tmpEffect);
+        // characterStatus로 변경해야 되고 itemAtk에 set하는 방식으로 ㄱㄱ
+        characterStatus.setItemAtk(tmpEffect);
+        characterStatus.setAtk(characterStatus.getDefaultAtk() + characterStatus.getItemAtk());
     }
 
 }

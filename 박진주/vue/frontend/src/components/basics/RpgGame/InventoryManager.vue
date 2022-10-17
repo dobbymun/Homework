@@ -1,6 +1,7 @@
 <template>
   <div>
     <h3>인벤토리 (Local Component)</h3>
+
     <label>
       <input type="checkbox" v-model="inventoryView" v-on:click="viewMyInventory()">
       소지품 보기
