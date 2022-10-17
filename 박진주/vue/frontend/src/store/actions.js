@@ -123,8 +123,18 @@ export default {
             })
     },
 
-   
+    //수정필요 플래그 추가 후 수정해보자
+    requestManyMonsterAttackFromSpring ({ dispatch }) {
+        console.log("몬스터 멀티 공격 실행 from 스프링()")
 
+        return axios.get('http://localhost:7777/homework/multi-monster-attack')
+            .then((res) => {
+                dispatch('requestMonsterStatusFromSpring')
+                if(res.data === true) {
+                    dispatch('requestCharacterStatusFromSpring')
+                }
+            })
+    },
 
     // requestExperienceExchangeFromSpring ({ commit }, payload) {
     //     console.log("requestExperienceExchangeFromSpring()")
